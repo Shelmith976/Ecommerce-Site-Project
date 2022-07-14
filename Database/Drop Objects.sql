@@ -1,0 +1,4 @@
+DROP TABLE Users
+DROP TABLE Categories
+DROP TABLE Orders
+DROP TABLE Products
