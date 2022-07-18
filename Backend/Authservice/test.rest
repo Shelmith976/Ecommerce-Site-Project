@@ -1,0 +1,17 @@
+//Register user
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+    "username":"major",
+    "email":"major@gmail.com",
+    "password":"major106"
+}
+###
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+    "email":"mike@gmail.com",
+    "password":"mike106"
+}
