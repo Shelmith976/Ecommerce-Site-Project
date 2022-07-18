@@ -1,0 +1,36 @@
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "username":"Bax",
+    "email":"ibax8@ycombinator.com",
+    "password":"mkDq1CeIBx4C",
+    "role":"user"
+}
+
+
+
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"ostroder2@xinhuanet.com",
+    "password":"12Xk4eO"
+}
+
+
+###
+POST http://localhost:5000/updateProfile
+Content-Type: application/json
+
+{
+    "username":"mary",
+    "email":"mary@mail.com",
+    "password":"mary0",
+ "role":"user"
+}
+
+
+
