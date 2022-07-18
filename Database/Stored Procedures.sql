@@ -1,16 +1,38 @@
+CREATE or alter PROCEDURE EmailVerify(
+    @email VARCHAR(255)
+)
+AS
+BEGIN
+    SELECT *
+    FROM Users
+    WHERE email = @email
+END
+GO
+
+CREATE or alter PROCEDURE UsernameVerify(
+    @username VARCHAR(100)
+)
+AS
+BEGIN
+    SELECT *
+    FROM Users
+    WHERE username = @username
+END
+GO
 
 CREATE OR ALTER PROCEDURE addUsers
     (
     @username VARCHAR(100),
     @email VARCHAR(255),
-    @password VARCHAR(255)
+    @password VARCHAR(255),
+    @role VARCHAR(90)
 )
 AS
 BEGIN
     INSERT INTO Users
-        (username, email, [password])
+        (username, email, [password], role)
     VALUES
-        ( @username, @email, @password)
+        ( @username, @email, @password, @role)
 END
 Go
 
