@@ -1,0 +1,30 @@
+.Login {
+  max-width: 500px;
+  /* border: 2px solid rgb(3, 165, 206); */
+  padding: 3px;
+  margin: 50px auto;
+  background-color: gray;
+}
+.Login h2 {
+  text-transform: uppercase;
+  color: black;
+}
+.Login form input,
+.Login form button {
+  width: 90%;
+  height: 40px;
+  margin: 10px 0;
+  padding: 0 5px;
+  outline: rgb(3, 165, 206);
+  border: 1px solid rgb(3, 165, 206);
+}
+.Login form .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Login button {
+  width: 150px;
+  background: rgb(3, 165, 206);
+  color: white;
+}
