@@ -1,0 +1,20 @@
+#main-container {
+    place-items: center center;
+}
+
+.fast-service-logo {
+    width: 100px;
+    height: 100px;
+}
+
+#sign-in-form {
+    min-width: 130px;
+}
+
+.form-control:focus {
+    z-index: 5;
+}
+
+.form-inputs p {
+    color: red;
+}
