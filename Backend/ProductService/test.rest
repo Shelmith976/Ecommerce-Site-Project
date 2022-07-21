@@ -1,4 +1,4 @@
-POST http://localhost:8000/product/createProduct
+POST http://localhost:5002/product/createProduct
 Content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 //Getting all products from the database
 ###
-GET http://localhost:8000/product/viewProducts
+GET http://localhost:5002/product/viewProducts
 //Getting product by name
 ###
 GET http://localhost:8000/product/product/Modern bamboo wrist watch

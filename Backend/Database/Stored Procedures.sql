@@ -25,10 +25,7 @@ CREATE OR ALTER PROCEDURE addUsers
     @username VARCHAR(100),
     @email VARCHAR(255),
     @password VARCHAR(255),
-<<<<<<< HEAD:Database/Stored Procedures.sql
     @role VARCHAR(90)
-=======
->>>>>>> 703eaf5f54cde95e910aa51f3141a41ab3c7c0aa:Backend/Database/Stored Procedures.sql
 )
 AS
 BEGIN

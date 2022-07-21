@@ -1,4 +1,4 @@
-POST http://localhost:5000/register
+POST http://localhost:5001/register
 Content-Type: application/json
 
 {
@@ -12,14 +12,14 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:5000/login
+POST http://localhost:5000/login/admin
 Content-Type: application/json
 
 {
-    "email":"ostroder2@xinhuanet.com",
-    "password":"12Xk4eO"
-}
+      "email":"ibax8@ycombinator.com",
+    "password":"mkDq1CeIBx4C"
 
+}
 
 ###
 POST http://localhost:5000/updateProfile
