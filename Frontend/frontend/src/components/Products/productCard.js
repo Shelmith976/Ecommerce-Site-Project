@@ -1,10 +1,12 @@
 import React from 'react';
-import productDetail from '../routes/productDetail';
+import ProductDetail from '../routes/productDetail';
+import  './product.css';
 const ProductCard = ({ product }) => {
   return (
-    <div>
+    <div className='card'>
 <h1>{product.productName}</h1>
   <h2>{product.description}</h2>
+  <img src={product.productImage} alt="" />
   <button onClick={
     ()=>{
       const navigate =() =>{
@@ -14,7 +16,7 @@ const ProductCard = ({ product }) => {
       }
       navigate();
     }
-  }>add</button>
+  }>add to carts</button>
   </div>
   )
 };

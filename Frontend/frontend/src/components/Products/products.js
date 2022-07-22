@@ -17,7 +17,7 @@ function Home() {
 
       product.then((res)=>{
         dispatch(addProducts(res.data.results))
-    // console.log(res.data.results)
+    
       }
 
     )
