@@ -1,10 +1,11 @@
 import {useState,useEffect} from 'react';
-import validateInfo from  './validateInfo.js'
-const useForm = (callback,{validate}) => {
+import axios from 'axios';
+const useForm = (callback,validateInfo) => {
     const [values,setValues] = useState({
         username:'',
         email:'',
-        password:''
+        password:'',
+        
     });
     const [errors,setErrors] = useState({});
     const [isSubmitting,setIsSubmitting] = useState(false);
@@ -18,15 +19,20 @@ const useForm = (callback,{validate}) => {
     const handleSubmit = e =>{
         e.preventDefault();
         setErrors(validateInfo(values));
+        
+        const data = JSON.stringify(values);
+
         setIsSubmitting(true);
-    };
-    useEffect(() => {
-        if(Object.keys(errors).length === 0 && isSubmitting){
+        axios.post(`http://localhost:5000/register`,data,{
+            headers: {'Content-Type': 'application/json'},
+        })
+        .then((data) => {
+            setIsSubmitting(false);
+            console.log('Registered successfully');
             callback(); 
-        }
-    },
-    [errors]
-    );
-    return {handleChange,values,handleSubmit,errors };
+        }).catch(error=>console.log(error));
+    };
+    
+    return {handleChange,values, isSubmitting, handleSubmit,errors };
 };
 export default useForm;

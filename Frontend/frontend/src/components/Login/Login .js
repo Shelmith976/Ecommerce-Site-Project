@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 
 function Login() {
@@ -15,14 +15,13 @@ function Login() {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(() => {
-        console.log('logged in succesfully');
+        console.log('logged in successfully');
       });
   };
   return (
     <div className="Login">
-      <h1>Log in</h1>
+      <h1 className="text-center">Log in</h1>
       <form onSubmit={handleSubmit}>
-        <label>Email</label>
         <input
           type="email"
           value={email}
@@ -30,15 +29,18 @@ function Login() {
           placeholder="Email address"
           required
         />
-        <label>Password</label>
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="password"
+          placeholder="Password"
           required
         />
+        <div className="d-grid">
         <button>Log in</button>
+        
+        <span>Don't have an account?<a href="register">Register</a></span>
+        </div>
       </form>
     </div>
   );
