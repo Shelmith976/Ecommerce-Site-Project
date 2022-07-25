@@ -11,8 +11,7 @@ function Login() {
     event.preventDefault();
     const data = JSON.stringify({ email, password });
 
-    axios
-      .post(`http://localhost:5000/login`, data, {
+    axios.post(`http://localhost:5000/login`, data, {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(() => {

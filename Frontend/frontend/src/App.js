@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import React,{useState} from 'react'
+import React from 'react'
 import Nav from './components/Navbar/Nav.js'
 import Register from './pages/Register/Register.js'
 import Home from './pages/Home/Home.js'
 import Login from './components/Login/Login .js';
 import Cart from './pages/Cart/Cart.js'
-import  { BrowserRouter,Routes, Route} from 'react-router-dom'
+import  {Routes, Route} from 'react-router-dom'
 import ProductDetail from './pages/Productdetail/ProductDetail.js'
 function App() {
   return (

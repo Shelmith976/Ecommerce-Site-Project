@@ -9,13 +9,13 @@ import store from './components/features/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+
+
   <React.StrictMode>
   <Provider store={store}>
     <App />
 
     </Provider>
   </React.StrictMode>
-
-  </BrowserRouter>
-);
+)
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

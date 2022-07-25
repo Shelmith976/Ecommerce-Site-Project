@@ -10,7 +10,7 @@ Content-Type: application/json
 }
 //Updating a product
 ###
-PUT http://localhost:8000/product/updateProduct
+PUT http://localhost:5002/product/updateProduct
 Content-Type: application/json
 
 {
@@ -26,7 +26,7 @@ Content-Type: application/json
 GET http://localhost:8000/product/viewProducts
 //Getting product by name
 ###
-GET http://localhost:8000/product/product/Modern bamboo wrist watch
+GET http://localhost:5002/product/product/car
 //Orders 
 //Making an order
 ###

@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import ProductCard from './productCard';
 import './ProductListing.css'
 const ProductListing = ({ products}) => {
