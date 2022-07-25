@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import './Login.css';
 
 function Login() {
@@ -19,8 +20,9 @@ function Login() {
       });
   };
   return (
-    <div className="Login">
-      <h1 className="text-center">Log in</h1>
+    <div className="Login text-center h-100">
+      <img className="mb-3 fast-service-logo" src="https://i.pinimg.com/564x/d4/0c/2a/d40c2a4b7250497223673f592349ac05.jpg" alt="Fast Service logo"/>
+      <h1 className="text-center fw-normal">Log in</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -37,7 +39,7 @@ function Login() {
           required
         />
         <div className="d-grid">
-        <button>Log in</button>
+        <Link to={"/Home"}><button>Log in</button></Link>
         
         <span>Don't have an account?<a href="register">Register</a></span>
         </div>

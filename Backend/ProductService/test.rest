@@ -1,12 +1,12 @@
-POST http://localhost:5002/product/createProduct
+POST http://localhost:8000/product/createProduct
 Content-Type: application/json
 
 {
-    "productName":"car",
-    "description":"Wooden watch with leather wrist band and black hands",
-    "price":"Ksh.1000.00",
-    "category":"Vehicles",
-    "productImage":"https://burst.shopifycdn.com/photos/wrist-watches.jpg?width=746&format=pjpg&exif=1&iptc=1"
+    "productName":"Generic Geneva Stylish Casual Watch",
+    "description":"Generic Geneva Stylish Casual Watch",
+    "price":"Ksh.9000.00",
+    "category":"Watches",
+    "productImage":"https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/01/221883/1.jpg?0474"
 }
 //Updating a product
 ###
@@ -14,16 +14,16 @@ PUT http://localhost:8000/product/updateProduct
 Content-Type: application/json
 
 {
-    "productId":2,
+    "productId":1,
     "productName":"Modern bamboo wrist watch",
     "description":"Wooden watch with leather wrist band and black hands",
-    "price":"Ksh.1800.00",
-    "category":"Wrist watches",
-    "productImage":"https://burst.shopifycdn.com/photos/wrist-watches.jpg?width=746&format=pjpg&exif=1&iptc=1"
+    "price":"Ksh.5600.00",
+    "category":"Watches",
+    "productImage":"https://image.kilimall.com/kenya/shop/store/goods/6188/2020/11/6188_06600882317941505_720.jpg.webp"
 }
 //Getting all products from the database
 ###
-GET http://localhost:5002/product/viewProducts
+GET http://localhost:8000/product/viewProducts
 //Getting product by name
 ###
 GET http://localhost:8000/product/product/Modern bamboo wrist watch

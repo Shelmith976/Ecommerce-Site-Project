@@ -4,10 +4,11 @@ const jwt = require('jsonwebtoken');
 
 const authControllers = {
   Register: async (req, res) => {
-    const { username, email, password, role } = req.body;
+    const { username, email, password} = req.body;
     try {
       let pool = await poolPromise();
-      const hashedPwd = await bcrypt.hash(password, 1);
+      const salt = await bcrypt.genSalt(10)
+      const hashedPwd = await bcrypt.hash(password, salt);
       console.log(hashedPwd);
       const emailVerify = await pool
         .request()
@@ -37,7 +38,6 @@ const authControllers = {
         .input('username', username)
         .input('password', hashedPwd)
         .input('email', email)
-        .input('role', role)
         .execute(`addUsers`)
         .then((results) => {
           if (results.rowsAffected) {

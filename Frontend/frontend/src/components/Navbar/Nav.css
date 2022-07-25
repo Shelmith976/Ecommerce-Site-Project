@@ -11,6 +11,24 @@
     padding: 5px 20px;
 }
 
-.nav image {
+.position-relative {
+    padding-top: 5px;
+}
+
+.cart {
     cursor: pointer;
+}
+
+.cart span:nth-child(1) {
+    font-size: 2rem;
+    color: white;
+}
+
+.cart span:nth-child(2) {
+    padding: 0 3px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    position: relative
 }

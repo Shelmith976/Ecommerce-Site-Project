@@ -4,8 +4,7 @@ Content-Type: application/json
 {
     "username":"Bax",
     "email":"ibax8@ycombinator.com",
-    "password":"mkDq1CeIBx4C",
-    "role":"user"
+    "password":"mkDq1CeIBx4C"
 }
 
 
@@ -28,9 +27,5 @@ Content-Type: application/json
 {
     "username":"mary",
     "email":"mary@mail.com",
-    "password":"mary0",
- "role":"user"
+    "password":"mary0"
 }
-
-
-

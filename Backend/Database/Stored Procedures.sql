@@ -25,14 +25,14 @@ CREATE OR ALTER PROCEDURE addUsers
     @username VARCHAR(100),
     @email VARCHAR(255),
     @password VARCHAR(255),
-    @role VARCHAR(90)
+    
 )
 AS
 BEGIN
     INSERT INTO Users
-        (username, email, [password], role)
+        (username, email, [password])
     VALUES
-        ( @username, @email, @password, @role)
+        ( @username, @email, @password)
 END
 Go
 
