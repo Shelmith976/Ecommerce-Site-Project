@@ -4,14 +4,18 @@ import  './product.css';
 const ProductCard = ({ product }) => {
   return (
     <div className='card'>
-<h1>{product.productName}</h1>
-  <h2>{product.description}</h2>
+
   <img src={product.productImage} alt="" />
+  <p>{product.productName}</p>
+  <p>{product.description}</p>
+  <p>{product.category}</p>
+
+
   <button onClick={
     ()=>{
       const navigate =() =>{
         const anchor =document.createElement('a');
-        anchor.href = 'productDetail';
+        anchor.href =`${product.productName}`;
         anchor.click();
       }
       navigate();

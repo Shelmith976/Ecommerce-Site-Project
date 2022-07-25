@@ -9,6 +9,10 @@ import Register from './pages/Register/Register'
 import Login from './components/Login/Login ';
 import {Provider} from 'react-redux'
 import store from './components/features/store'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from './pages/Home/imagesSlider';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -17,10 +21,11 @@ root.render(
 
   <React.StrictMode>
     <Nav />
+    <Carousel/>
     <Routes>
     <Route path ="/" element={<App/>}/>
     <Route path='/login' element={<Login/>} />
-    <Route path ="/productDetail" element={<ProductDetail />}/>
+    <Route path ="/:productName" element={<ProductDetail />}/>
      <Route path='/register' element={<Register/>} />
 
     </Routes>
@@ -30,8 +35,4 @@ root.render(
   </BrowserRouter>
 
 )
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 

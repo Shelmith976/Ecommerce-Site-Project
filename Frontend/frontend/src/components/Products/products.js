@@ -9,7 +9,6 @@ function Home() {
   //   const [products, setProducts] = useState([]);
   const products= useSelector((state) => state.products);
   const dispatch = useDispatch();
-  // const movietext = "Hustle";
     const product= axios.get(`http://localhost:5002/product/viewProducts`)
 
     useEffect(()=>{

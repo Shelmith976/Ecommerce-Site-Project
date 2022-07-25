@@ -23,8 +23,11 @@ Content-Type: application/json
 }
 //Getting all products from the database
 ###
-GET http://localhost:5000/product/viewProducts
+GET http://localhost:5002/product/pageProduct?row_count=2&page_number=2
 //Getting product by name
+
+###
+GET http://localhost:5002/product/viewProducts
 ###
 GET http://localhost:5002/product/product/car
 //Orders 

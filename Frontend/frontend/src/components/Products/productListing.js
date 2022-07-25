@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './productCard';
+import  './product.css';
 const productListing = ({ products}) => {
   return (
     <div className='products'>
