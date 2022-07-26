@@ -30,9 +30,6 @@ function App() {
           <Route path="/product/:productName" element={<ProductDetail/>}/>
         
         </Routes> 
-
-
-        <Products />
         <Pagination/>
         <Footer/>
 
