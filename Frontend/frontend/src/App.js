@@ -5,10 +5,11 @@ import Register from './pages/Register/Register.js'
 import Home from './pages/Home/Home.js'
 import Login from './components/Login/Login .js';
 import Cart from './pages/Cart/Cart.js'
-import  {Routes, Route} from 'react-router-dom'
+import  {BrowserRouter,Routes, Route} from 'react-router-dom'
 import ProductDetail from './pages/Productdetail/ProductDetail.js'
 function App() {
   return (
+    <BrowserRouter>
       <div className="App">
         <Nav />
         <Routes> 
@@ -20,8 +21,8 @@ function App() {
           <Route path="/product/:productName" element={<ProductDetail/>}/>
         
         </Routes> 
-      
       </div>
+    </BrowserRouter>
   );
 }
 

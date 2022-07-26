@@ -1,24 +1,25 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import {useParams}from 'react-router-dom'
 import axios from "axios"
-import { addProductDetail } from '../../components/features/productDetailReducer';
+import { addProductDetail } from '../../components/features/productDetailslice';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const ProductDetail = () => {
   const {productName}=useParams();
- 
-  const detail=useSelector(state=>state.detail)
-  const dispatch=useDispatch();
-  useEffect(() => {
-    
-    axios.get(`http://localhost:8000/product/product/${productName}`).then(res=>{
-    
-    dispatch (addProductDetail (res.data.results[0]))})
-    
+  const [detail, setDetails]  = useState([]) 
+//useSelector(state=>state.detail)
+  //const dispatch=useDispatch();
   
-  }, [])
   console.log(detail)
-  
+  useEffect (()=>{
+    axios.get(`http://localhost:8000/product/product/${productName}`).then((res)=>{
+      console.log(res)
+      setDetails(res.data.results)
+      //dispatch (addProductDetail (res.data.results[0]))
+      
+    
+    })
+  },[])
   return (
     <div>
       

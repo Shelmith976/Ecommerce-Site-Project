@@ -4,7 +4,7 @@ const productDetailSlice=createSlice({
     initialState:[],
     reducers:{
     addProductDetail:(state,{payload})=>{
-    return state= payload
+    return state.detail= payload
 }
 }
 })
