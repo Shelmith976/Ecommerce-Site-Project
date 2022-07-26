@@ -38,6 +38,7 @@ const authControllers = {
         .input('username', username)
         .input('password', hashedPwd)
         .input('email', email)
+        // .input('role', role)
         .execute(`addUsers`)
         .then((results) => {
           if (results.rowsAffected) {

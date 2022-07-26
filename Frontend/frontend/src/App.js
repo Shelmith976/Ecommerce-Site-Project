@@ -7,7 +7,16 @@ import Login from './components/Login/Login .js';
 import Cart from './pages/Cart/Cart.js'
 import  {BrowserRouter,Routes, Route} from 'react-router-dom'
 import ProductDetail from './pages/Productdetail/ProductDetail.js'
+// import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import './App.css';
+// import Register from './pages/Register/Register.js'
+// import Home from './pages/Home/Home'
+import Products from './components/Products/products';
+import { Carousel } from 'react-bootstrap';
+import Footer from './components/footer/footer';
+import Pagination from './components/pagination/pagination';
 function App() {
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -21,6 +30,12 @@ function App() {
           <Route path="/product/:productName" element={<ProductDetail/>}/>
         
         </Routes> 
+
+
+        <Products />
+        <Pagination/>
+        <Footer/>
+
       </div>
     </BrowserRouter>
   );

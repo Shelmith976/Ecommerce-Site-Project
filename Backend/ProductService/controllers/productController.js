@@ -67,6 +67,18 @@ module.exports = {
       });
     });
   },
+
+  pageProduct: async (req, res) => {
+    let pool = await poolPromise();
+      const results= await
+              pool.request()
+              .input('row_count', req.query.row_count)
+              .input('page_number',req.query.page_number)
+              .execute("paginator").then(results=>{
+                  res.json(results.recordset)
+              })
+      
+      },
   //Search products by name
   getProduct: async (req, res) => {
     const { productName } = req.params;

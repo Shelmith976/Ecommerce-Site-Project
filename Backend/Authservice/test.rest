@@ -4,8 +4,10 @@ Content-Type: application/json
 {
     "username":"Bax",
     "email":"ibax8@ycombinator.com",
-    "password":"mkDq1CeIBx4C"
+    "password":"mkDq1CeIBx4C
+    
 }
+
 
 
 
