@@ -4,20 +4,18 @@ import {Navbar} from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import {Form} from 'react-bootstrap';
 import {Image} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import './Nav.css';
-import {useCart} from  'react-use-cart';
-function Nav (){
-  const {
-    totalUniqueItems
-} = useCart();
+
+const Nav = () =>{
   return (
     <Navbar bg="light" expand="lg" className="nav">
       <Container fluid>
         <Image
           src="https://i.pinimg.com/564x/d4/0c/2a/d40c2a4b7250497223673f592349ac05.jpg"
-          width="100"
+          width="50"
           height="70"
-          className="d-inline-block align-top"
+          className="d-inline-block align-top me-3"
           alt="Fast service logo"
         />
         
@@ -28,16 +26,18 @@ function Nav (){
             className="me-2"
             aria-label="Search"
           />
-          <Button variant="outline-success">Search</Button>
+          <Button className="me-3" variant="outline-success">Search</Button>
         </Form>
-        <p>
-        <Image
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsQF8mY1qCkRPbSwMpwH_QowfQV6BfZWYUcw&usqp=CAU"
-          width="50"
-          height="40"
-          className="d-inline-block align-top position-relative"
-          alt="Cart icon"
-        /><span className="badge-bg-danger position-absolute translate-middle rounded-pill">{totalUniqueItems}</span></p>
+        <div className="cart">
+        <Link to={"/Cart"}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg></Link>
+        <span>0</span></div>
+        <div className="d-grid">
+        <Link to="/register"><button className="btn btn-sm btn-outline-success mb-2">Register</button></Link>
+        <Link to="/login"><button className="btn btn-sm btn-outline-success">Login</button></Link>
+        </div>
       </Container>
     </Navbar>
   )

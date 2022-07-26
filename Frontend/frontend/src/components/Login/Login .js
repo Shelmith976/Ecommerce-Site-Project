@@ -1,5 +1,6 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import './Login.css';
 
 function Login() {
@@ -14,14 +15,14 @@ function Login() {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(() => {
-        console.log('logged in succesfully');
+        console.log('logged in successfully');
       });
   };
   return (
-    <div className="Login">
-      <h1>Log in</h1>
+    <div className="Login text-center h-100">
+      <img className="mb-3 fast-service-logo" src="https://i.pinimg.com/564x/d4/0c/2a/d40c2a4b7250497223673f592349ac05.jpg" alt="Fast Service logo"/>
+      <h1 className="text-center fw-normal">Log in</h1>
       <form onSubmit={handleSubmit}>
-        <label>Email</label>
         <input
           type="email"
           value={email}
@@ -29,15 +30,18 @@ function Login() {
           placeholder="Email address"
           required
         />
-        <label>Password</label>
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="password"
+          placeholder="Password"
           required
         />
-        <button>Log in</button>
+        <div className="d-grid">
+        <Link to={"/Home"}><button>Log in</button></Link>
+        
+        <span>Don't have an account?<a href="register">Register</a></span>
+        </div>
       </form>
     </div>
   );

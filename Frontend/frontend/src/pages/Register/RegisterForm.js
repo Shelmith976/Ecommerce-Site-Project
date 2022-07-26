@@ -5,8 +5,8 @@ import {Form} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 import useForm from './useForm';
 import validateInfo from './validateInfo'
-const RegisterForm = (submitForm) => {
-  const {handleChange,values,handleSubmit,errors} = useForm(validateInfo,submitForm);
+const RegisterForm = ({submitForm}) => {
+  const {handleChange,values,handleSubmit,errors,isSubmitting} = useForm(submitForm,validateInfo);
   return (
     <Container id="main-container" className="d-grid h-100">
       <Form className="form-inputs text-center h-100" id="sign-in-form" onSubmit={handleSubmit}>
@@ -32,7 +32,10 @@ const RegisterForm = (submitForm) => {
           {errors.password && <p>{errors.password}</p>}
         </Form.Group>
         <div className="d-grid">
-          <Button className="form-input-btn" variant="primary" type="submit" size="lg">Create account</Button>
+          <Button disabled={isSubmitting} className="form-input-btn" variant="primary" type="submit" size="lg">
+            {isSubmitting?"Loading...":"Create account"}
+            </Button>
+            <span>Already have an account?<a href="Login">Login</a></span>
         </div>
         </Form>
     </Container>

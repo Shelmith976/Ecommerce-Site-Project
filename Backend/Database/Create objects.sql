@@ -8,7 +8,6 @@ CREATE TABLE Users
     username VARCHAR(100) ,
     email VARCHAR(255) ,
     [password] VARCHAR(255) ,
-    role varchar (90),
     IsDeleted BIT NOT NULL DEFAULT 0,
    IsConfirmed BIT NOT NULL DEFAULT 0,
    [role] BIT NOT NULL DEFAULT 0
@@ -23,8 +22,7 @@ CREATE TABLE Products(
     description VARCHAR(255) ,
     price VARCHAR(100) ,
     category VARCHAR(255) ,
-    productImage TEXT,
-    userId INT FOREIGN KEY REFERENCES Users(userId)
+    productImage TEXT
 );
 GO
 SELECT * FROM Products
