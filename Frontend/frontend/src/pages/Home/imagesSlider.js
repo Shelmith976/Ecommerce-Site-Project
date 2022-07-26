@@ -1,38 +1,7 @@
-// import { useState, useEffect } from "react";
-// import SliderData from './sliderData'
-// import './slider.css'
 
-
-// function ImagesSlider ({ slides }) 
-// {
-//   const [currentSlide, setCurrentSlide] = useState(0)
-//     useEffect(() => {
-//         const slideInterval = setInterval(() => {
-
-//             setCurrentSlide(currentSlide => currentSlide < slides.length - 1 ? currentSlide + 1 : 0)
-
-//         }, 3000)
-
-//         return () => clearInterval(slideInterval)
-//     }, [])
-
-
-//   return (
-//     <div className="carousel">
-//       <div className="carousel-inner" style={{ transform: `translateX(${-currentSlide * 100}%)`}}>
-//         {slides.map((slide, index) => (
-//           <SliderData slide={slide} key={index} />
-          
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-// export default ImagesSlider;
 import Carousel from 'react-bootstrap/Carousel';
 import React from "react";
 import './slider.css';
-// import { useState, useEffect } from "react";
 
 function carousel() {
   return (
