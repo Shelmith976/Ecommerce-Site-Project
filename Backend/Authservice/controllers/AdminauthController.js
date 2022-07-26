@@ -5,7 +5,7 @@ const poolPromise = require('../config/poolPromise');
 const admin = async (req, res) => {
   try {
     const user = await poolPromise.findOne({ ema });
-    if (user.role === admin)
+    if (user.role ===1)
       returnres.status(200).json({ message: ' Admin resources' });
   } catch (error) {
     return res.status(500).json({ message: error.message });
