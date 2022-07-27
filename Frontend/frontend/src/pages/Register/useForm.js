@@ -1,4 +1,4 @@
-import {useState,useEffect} from 'react';
+import {useState} from 'react';
 import axios from 'axios';
 const useForm = (callback,validateInfo) => {
     const [values,setValues] = useState({

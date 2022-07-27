@@ -21,12 +21,14 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Nav />
+        <Carousel />
         <Routes> 
           
-          <Route path='/cart' element={<Cart />}/>
+          
           <Route path='/home' element={<Home />} />
           <Route path='/register' element={<Register/>} />
           <Route path='/login' element={<Login/>} />
+          <Route path='/cart' element={<Cart />}/>
           <Route path="/product/:productName" element={<ProductDetail/>}/>
         
         </Routes> 

@@ -21,13 +21,15 @@ export const ProductDetail = () => {
     })
   },[])
   return (
-    <div>
-      
-        <img src={detail.productImage} alt="" />
-        <p>{detail.productName}</p>
-        <p> {detail.category}</p>
-        <small className='price'>${detail.price}</small>
-        <button className='btn btn-primary'>Add to cart</button>
+    <div className="card h-100">
+      <div className="d-grid justify-content-center">
+          <img src={detail.productImage} alt="" />
+          <h5>{detail.productName}</h5>
+          <p>{detail.description}</p>
+          <p> {detail.category}</p>
+          <small className='price'>${detail.price}</small>
+          <button className='btn btn-primary'>Add to cart</button>
+      </div>
     </div>
 
   )
