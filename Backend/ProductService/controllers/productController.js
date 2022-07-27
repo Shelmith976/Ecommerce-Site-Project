@@ -85,7 +85,7 @@ module.exports = {
     let pool = await poolPromise();
     pool
       .query(
-        `select productId,productName,description,price,category from Products where productName='${productName}'`
+        `select productId,productImage,productName,description,price,category from Products where productName='${productName}'`
       )
       .then((results) => {
         let products = results.recordset[0];
