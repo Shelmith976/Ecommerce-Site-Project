@@ -71,32 +71,38 @@ BEGIN
         (  @productName,  @description , @price,@category, @productImage)
 END
 Go
-
-CREATE OR ALTER PROCEDURE addCategories
+CREATE OR ALTER PROCEDURE createOrder
     (
-    @categoryName VARCHAR(100),
-    @productId int 
-)
-AS
-BEGIN
-   INSERT INTO Categories
-        (categoryName, productId)
-    VALUES
-        (  @categoryName, @productId)
-END
-Go
-CREATE OR ALTER PROCEDURE addOrders
-    (
+	@orderId int,
     @userId int,
-    @productId int ,
-    @orderTotals int
+    @productId int,
+	@totalAmount decimal(12,2) = 0
+    
 )
 AS
 BEGIN
    INSERT INTO Orders
-        (userId, productId, orderTotals)
+        (orderId, userId)
     VALUES
-        (  @userId, @productId,@orderTotals)
+        ( @orderId,@userId)
+END
+Go
+CREATE OR ALTER PROCEDURE addOrderDetails
+  (
+  @json NVARCHAR(1000)
+  )
+AS
+BEGIN
+   INSERT INTO OrderDetails
+        (orderId, productId, unitPrice, quantity)
+    SELECT orderId, productId, unitPrice, quantity
+	FROM OPENJSON(@json)
+	WITH(
+	orderId INT,
+	productId INT,
+	unitPrice DECIMAL(12,2),
+	quantity INT
+	)
 END
 Go
 

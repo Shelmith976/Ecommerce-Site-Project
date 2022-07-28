@@ -1,11 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import {addToCart} from '../features/Reducer'
 const ProductCard = ({ product }) => {
-  const cart= useSelector((state) => state);
-  console.log(cart);
+  
   const dispatch = useDispatch();
   
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
+  }
+    
   return (
     <>
       <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 mb-4">
@@ -21,7 +25,7 @@ const ProductCard = ({ product }) => {
               <p className="card-text">{product.category}</p>
             </div>
             <div className="d-grid justify-content-end mt-4">
-              <button className="btn btn-sm btn-outline-success" onClick={() =>dispatch({type:"ADD",payload:product})}>Add to Cart</button>
+              <button className="btn btn-sm btn-outline-success" onClick={()=> handleAddToCart(product)}>Add to Cart</button>
             </div>
           </div>
         </div>

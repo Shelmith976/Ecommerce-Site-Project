@@ -2,10 +2,10 @@
 Content-Type: application/json
 
 {
-    "productName":"Generic Geneva Stylish Casual Watch",
-    "description":"Generic Geneva Stylish Casual Watch",
+    "productName":"car",
+    "description":"BW",
     "price":"Ksh.9000.00",
-    "category":"Watches",
+    "category":"Vehicles",
     "productImage":"https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/01/221883/1.jpg?0474"
 }
 //Updating a product

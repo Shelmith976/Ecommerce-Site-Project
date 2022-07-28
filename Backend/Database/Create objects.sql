@@ -14,7 +14,6 @@ CREATE TABLE Users
    );
 GO
 SELECT * FROM Users
-DELETE FROM Users WHERE username ='Bax'
 
 CREATE TABLE Products(
     productId INT IDENTITY PRIMARY KEY,
@@ -26,24 +25,21 @@ CREATE TABLE Products(
 );
 GO
 SELECT * FROM Products
-ALTER TABLE Products alter column productImage TEXT
 
 CREATE TABLE Orders(
-        orderId INT IDENTITY PRIMARY KEY,
-            userId INT FOREIGN KEY REFERENCES Users(userId),
-    productId INT FOREIGN KEY REFERENCES Products(productId),
-     orderDate DATETIME DEFAULT GETDATE(),
-    orderTotals INT 
-
-
+orderId INT IDENTITY PRIMARY KEY,
+totalAmount DECIMAL(12,2),
+userId INT FOREIGN KEY REFERENCES Users(userId)
 );
 GO
 SELECT * FROM Orders
 
-CREATE TABLE Categories(
-    categoryId INT IDENTITY PRIMARY KEY,
-        productId INT FOREIGN KEY REFERENCES Products(productId),
-        categoryName VARCHAR(255) ,
+CREATE TABLE OrderDetails(
+orderId INT FOREIGN KEY REFERENCES Orders(orderId),
+quantity INT,
+unitPrice DECIMAL(12,2),
+orderDate DATETIME DEFAULT GETDATE(),
+productId INT FOREIGN KEY REFERENCES Products(productId)
 );
 GO
-SELECT * FROM Categories
+SELECT * FROM OrdersDetails
