@@ -99,3 +99,26 @@ BEGIN
         (  @userId, @productId,@orderTotals)
 END
 Go
+
+searchstoredprocedure
+CREATE OR ALTER PROCEDURE SearchProduct(
+@productName varchar (100))
+AS
+BEGIN 
+SELECT * FROM Products where Lower(productName)LIKE'%' + LOWER(@productName) +'%'
+END
+//pagination
+CREATE OR ALTER PROCEDURE paginator(
+       @row_count INT,
+        @page_number INT
+  
+)
+AS
+BEGIN
+SELECT productId, productName, description FROM Products
+ORDER BY productId
+OFFSET @row_count*@page_number ROWS 
+FETCH NEXT @row_count ROWS ONLY
+END
+EXECUTE paginator 2, 2
+SELECT* FROM Products

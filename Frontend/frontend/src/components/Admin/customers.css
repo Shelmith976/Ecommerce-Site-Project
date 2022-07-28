@@ -1,0 +1,9 @@
+.d-grid{
+    display:flex;
+    gap:10px;
+    margin:20px;
+
+}
+.d-grid input{
+    width:120px;
+}

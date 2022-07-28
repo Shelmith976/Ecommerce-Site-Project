@@ -12,7 +12,7 @@ export const ProductDetail = () => {
   
   console.log(detail)
   useEffect (()=>{
-    axios.get(`http://localhost:8000/product/product/${productName}`).then((res)=>{
+    axios.get(`http://localhost:5002/product/product/${productName}`).then((res)=>{
       console.log(res)
       setDetails(res.data.results)
       //dispatch (addProductDetail (res.data.results[0]))

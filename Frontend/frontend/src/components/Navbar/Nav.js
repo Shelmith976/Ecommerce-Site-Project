@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Container } from 'react-bootstrap';
 import {Navbar} from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -8,6 +8,13 @@ import {Link} from 'react-router-dom';
 import './Nav.css';
 
 const Nav = () =>{
+  const [search, setSearch]=useState('');
+ const searchProduct = async(e)=>{
+        e.preventDefault();
+             }
+  const changeHandler=(e)=>{
+    setSearch(e.target.value);
+  } 
   return (
     <Navbar bg="light" expand="lg" className="nav">
       <Container fluid>
@@ -19,14 +26,14 @@ const Nav = () =>{
           alt="Fast service logo"
         />
         
-        <Form className="d-flex">
+        <Form className="d-flex" onSubmit={searchProduct}>
           <Form.Control
             type="search"
-            placeholder="Search"
+            placeholder="Search"onChange={changeHandler}  value={search}aria-label="Search"
             className="me-2"
-            aria-label="Search"
-          />
-          <Button className="me-3" variant="outline-success">Search</Button>
+            // aria-label="Search"
+          /><Link to ={`/search/${search}`}>
+          <Button className="me-3" variant="outline-success"type="submit">Search</Button></Link>
         </Form>
         <div className="cart">
         <Link to={"/Cart"}>

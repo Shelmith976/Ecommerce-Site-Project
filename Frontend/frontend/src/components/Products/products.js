@@ -9,7 +9,7 @@ function Home() {
   const products= useSelector((state)=>state.products);
   const dispatch = useDispatch();
 
-    const product= axios.get(`http://localhost:8000/product/viewProducts`)
+    const product= axios.get(`http://localhost:5002/product/viewProducts`)
 
     useEffect(()=>{
       dispatch (addProducts([]))
