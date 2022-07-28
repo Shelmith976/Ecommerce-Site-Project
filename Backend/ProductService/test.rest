@@ -10,7 +10,7 @@ Content-Type: application/json
 }
 //Updating a product
 ###
-PUT http://localhost:5002/product/updateProduct
+PUT http://localhost:8000/product/updateProduct
 Content-Type: application/json
 
 {
@@ -23,11 +23,11 @@ Content-Type: application/json
 }
 //Getting all products from the database
 ###
-GET http://localhost:5002/product/pageProduct?row_count=2&page_number=2
+GET http://localhost:8000/product/pageProduct?row_count=2&page_number=2
 //Getting product by name
 
 ###
-GET http://localhost:5002/product/viewProducts
+GET http://localhost:8000/product/viewProducts
 ###
 GET http://localhost:8000/product/product/Modern bamboo wrist watch
 
