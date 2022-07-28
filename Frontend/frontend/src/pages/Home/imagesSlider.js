@@ -3,19 +3,19 @@ import Carousel from 'react-bootstrap/Carousel';
 import React from "react";
 import './slider.css';
 
-function carousel() {
+function Carousels() {
   return (
     <div className='carousel'>
     <Carousel>
-      <Carousel.Item interval={3}>
+      <Carousel.Item>
         <img
           className="d-block w-100"
           src="https://raw.githubusercontent.com/owaisibrahim099/react-carousel/master/src/assets/images/2.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>First image</h3>
+          <p>Welcome!</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -49,4 +49,4 @@ function carousel() {
   );
 }
 
-export default carousel;
+export default Carousels;

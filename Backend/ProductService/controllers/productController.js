@@ -105,4 +105,20 @@ module.exports = {
         });
       });
   },
+  searchProduct: async (req, res) => {
+
+    try {
+        let pool = await poolPromise()
+        const result=await pool.request()
+        .input('productName',req.query.productName)
+        .execute(`SearchProduct`)
+        const products=result.recordset;
+            res.json(products)
+       
+    } catch (err) {
+        res.status(500)
+
+    }
+},
 };
+ 
